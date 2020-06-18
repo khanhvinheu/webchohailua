@@ -11,6 +11,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PhuongthucthanhtoanComponent } from './phuongthucthanhtoan/phuongthucthanhtoan.component';
 import { KhuyenmaiComponent } from './khuyenmai/khuyenmai.component';
 import { ChitietkhuyenmaiComponent } from './chitietkhuyenmai/chitietkhuyenmai.component';
+import { SanphamComponent } from './sanpham/sanpham.component';
+import { NhacungcapComponent } from './nhacungcap/nhacungcap.component';
+import { TaikhoanComponent } from './taikhoan/taikhoan.component';
 
 
 
@@ -52,6 +55,15 @@ const routes: Routes = [
       },
       {
         path:'chitietkhuyenmai', component:ChitietkhuyenmaiComponent
+      },
+      {
+        path:'sanpham', component:SanphamComponent
+      },
+      {
+        path:'nhacungcap', component:NhacungcapComponent
+      },
+      {
+        path:'taikhoan', component:TaikhoanComponent
       }
     ]
     

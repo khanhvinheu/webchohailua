@@ -6,7 +6,7 @@ import { DemoMaterialModule } from './material-module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginAdminModule } from './login-admin/login-admin.module';
 import { MatDialogModule } from '@angular/material/dialog';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { DanhMucComponent } from './danh-muc/danh-muc.component';
 import { DanhmucAddComponent } from './danh-muc/danhmuc-add/danhmuc-add.component';
@@ -28,13 +28,25 @@ import { KhuyenmaiEditComponent } from './khuyenmai/khuyenmai-edit/khuyenmai-edi
 import { ChitietkhuyenmaiComponent } from './chitietkhuyenmai/chitietkhuyenmai.component';
 import { ChitietkhuyenmaiCreateComponent } from './chitietkhuyenmai/chitietkhuyenmai-create/chitietkhuyenmai-create.component';
 import { ChitietkhuyenmaiEditComponent } from './chitietkhuyenmai/chitietkhuyenmai-edit/chitietkhuyenmai-edit.component';
+import { SanphamComponent } from './sanpham/sanpham.component';
+import { ImageAddComponent } from './sanpham/image-add/image-add.component';
+import { SanphamAddComponent } from './sanpham/sanpham-add/sanpham-add.component';
+// import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { CKEditorModule } from 'ng2-ckeditor';
+import { ShareModule } from '../share/share.module';
+import { SanphamEditComponent } from './sanpham/sanpham-edit/sanpham-edit.component';
+import { NhacungcapModule } from './nhacungcap/nhacungcap.module';
+import { TaikhoanModule } from './taikhoan/taikhoan.module';
+import { TokenInterceptor } from '../auth/intercreptors/token.intercreptor';
+import { MyHelper } from '../helper/MyHelper';
+import { PageRoutingModule } from '../page/page-routing.module';
 
 
 
 @NgModule({
   declarations: [  
-    LoginAdminComponent, 
-    DanhMucComponent,
+     LoginAdminComponent, 
+     DanhMucComponent,
      DanhmucAddComponent, 
      DanhmucListComponent, 
      DanhmucEditComponent, 
@@ -48,8 +60,18 @@ import { ChitietkhuyenmaiEditComponent } from './chitietkhuyenmai/chitietkhuyenm
      PhuongthucthanhtoanComponent, 
      PtttCreateComponent, 
      PtttEditComponent, 
-     KhuyenmaiComponent, KhuyenmaiCreateComponent, KhuyenmaiEditComponent, ChitietkhuyenmaiComponent, ChitietkhuyenmaiCreateComponent, ChitietkhuyenmaiEditComponent, 
-  
+     KhuyenmaiComponent, 
+     KhuyenmaiCreateComponent, 
+     KhuyenmaiEditComponent, 
+     ChitietkhuyenmaiComponent, 
+     ChitietkhuyenmaiCreateComponent, 
+     ChitietkhuyenmaiEditComponent, 
+     SanphamComponent, 
+     ImageAddComponent, 
+     SanphamAddComponent,
+     SanphamEditComponent,
+     
+       
   ],
   imports: [
     CommonModule,
@@ -61,9 +83,20 @@ import { ChitietkhuyenmaiEditComponent } from './chitietkhuyenmai/chitietkhuyenm
     HttpClientModule,
     FormsModule,RouterModule,
     CommonModule,  
-    ReactiveFormsModule,
-  
-    
+    ReactiveFormsModule,  
+    CKEditorModule,
+    ShareModule, 
+    NhacungcapModule,
+    TaikhoanModule ,    
+    PageRoutingModule,
+    HttpClientModule
+  ],
+  providers:[
+    MyHelper,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ]
+  
+   
+
 })
 export class AdminModule { }

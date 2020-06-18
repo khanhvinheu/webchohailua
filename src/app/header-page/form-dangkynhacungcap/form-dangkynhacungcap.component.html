@@ -1,0 +1,52 @@
+<div class="row" >    
+    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7" style="background-image: url({{api_url}}/upload/other/form-img.jpg);background-size: 100%;">   
+        <!-- <img style="width: 150%;" src="{{api_url}}/upload/other/form-img.jpg" alt="">      -->
+    </div>   
+    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+        <div class="col-lg-12 p-0 mx-0">
+            <span class="title_sp_lq">ĐĂNG KÝ NHÀ CUNG CẤP</span>          
+        </div>
+        <hr>
+        <form [formGroup]="frmAdd" (ngSubmit)="onSubmitForm()">
+        <mat-form-field appearance="fill" style="width: 100%;">
+            <mat-label>Tên nhà cung cấp</mat-label>
+            <span [ngClass]="onValidatorTextColor('tenNhacungcap')" [innerHTML]="onValidator('tenNhacungcap')" style="float: right; font-size: 10px;"></span>
+            <input matInput formControlName="tenNhacungcap" [ngClass]="onValidatorBorderColor('tenNhacungcap')">
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="width: 100%;">
+            <mat-label>Địa chỉ</mat-label>
+            <span [ngClass]="onValidatorTextColor('diaChi')" [innerHTML]="onValidator('diaChi')" style="float: right; font-size: 10px;"></span>
+            <input matInput formControlName="diaChi" [ngClass]="onValidatorBorderColor('diaChi')">
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="width: 100%;">
+            <mat-label>Số điện thoại</mat-label>
+            <span [ngClass]="onValidatorTextColor('soDienthoai')" [innerHTML]="onValidator('soDienthoai')" style="float: right; font-size: 10px;"></span>
+            <input matInput formControlName="soDienthoai" [ngClass]="onValidatorBorderColor('soDienthoai')">
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="width: 100%;">
+            <mat-label>Email</mat-label>
+            <span [ngClass]="onValidatorTextColor('email')" [innerHTML]="onValidator('email')" style="float: right; font-size: 10px;"></span>
+            <input matInput formControlName="email" [ngClass]="onValidatorBorderColor('email')">
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="width: 100%;">
+            <mat-label>Hình ảnh</mat-label>
+            <span [ngClass]="onValidatorTextColor('hinhAnh')" [innerHTML]="onValidator('hinhAnh')" style="float: right; font-size: 10px;"></span>
+            <input matInput formControlName="hinhAnh" [ngClass]="onValidatorBorderColor('hinhAnh')">
+        </mat-form-field>
+        <hr>               
+            <!-- <button class="btn btn-danger registerncc" >Đăng Ký</button> -->
+            <!-- <button class="btn btn-danger">Thoát</button>     -->
+            <div class="d-flex flex-row ">
+                <button type="submit" [disabled]="frmAdd.invalid || is_loading" mat-flat-button color="warn" class="mr-2">
+                    <div class="d-flex justify-content-center position-relative">
+                        <div class="spinner-border text-muted position-absolute" *ngIf="is_loading"></div>
+                        <span> Đăng ký</span>
+                    </div>
+                </button>
+                <button type="reset" mat-stroked-button color="basic">Làm mới</button>
+        
+            </div>
+        </form>     
+    </div>
+    
+</div>

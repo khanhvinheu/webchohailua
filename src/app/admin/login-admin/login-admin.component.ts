@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogModule} from '@angular/material/dialog';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
+import { LoginComponent } from 'src/app/login/login.component';
 
 export interface DialogData {
   animal: string;
@@ -30,6 +31,11 @@ export class LoginAdminComponent implements OnInit {
       this.animal = result;
     });
   }
+  onLogin() {
+    this.dialog.open(LoginComponent,{
+        width: '400px'
+    });
+  }
 
   ngOnInit(): void {
  
@@ -51,3 +57,4 @@ export class DialogOverviewExampleDialog {
   }
 
 }
+

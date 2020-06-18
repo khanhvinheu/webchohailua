@@ -1,1 +1,95 @@
-<p>homepage works!</p>
+<div class="container-home" style="background: #f8f9fa">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12" style="margin-right: -15px"></div>
+            <div class="col-lg-7 col-12 p-0 d-flex no-gutters">
+                <div class=" d-block row w-100 m-0">
+                    <app-slide></app-slide>
+                </div>
+            </div>
+            <div class="col-lg-2 p-0">
+                <div class="box_service shadow  d-none d-lg-flex flex-column justify-content-between"
+                    style="width: 205px !important; height: 423px !important;">
+                    <div class="service">
+                        <div class="image d-flex justify-content-center py-4">
+                            <img class="image-sv"
+                                src="//bizweb.dktcdn.net/100/118/174/themes/714254/assets/cart-sv.png?1554088138413"
+                                alt="Sản phẩm đa dạng,</br> mẫu mã phong phú">
+                        </div>
+                        <div class="info px-3 text-center">
+                            <div><span>Sản phẩm đa dạng,<br> mẫu mã phong phú</span></div>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <div class="image d-flex justify-content-center py-4">
+                            <img class="image-sv"
+                                src="//bizweb.dktcdn.net/100/118/174/themes/714254/assets/cart-sv.png?1554088138413"
+                                alt="Sản phẩm đa dạng,</br> mẫu mã phong phú">
+                        </div>
+                        <div class="info px-3 text-center">
+                            <div><span>Sản phẩm đa dạng,<br> mẫu mã phong phú</span></div>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <div class="image d-flex justify-content-center py-4">
+                            <img class="image-sv"
+                                src="//bizweb.dktcdn.net/100/118/174/themes/714254/assets/cart-sv.png?1554088138413"
+                                alt="Sản phẩm đa dạng,</br> mẫu mã phong phú">
+                        </div>
+                        <div class="info px-3 text-center">
+                            <div><span>Sản phẩm đa dạng,<br> mẫu mã phong phú</span></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs d-flex text-center border-bottom-0 text-white" id='myTab'>
+                <li class="nav-item col d-flex bg-success mx-1 p-0 mat-elevation-z1 border-0 ">
+                    <a class="nav-link w-100 text-white" [ngClass]="{'active': isActive1}" (click)="onClickTab(1)">Nhà cung cấp của chúng tôi</a>
+                </li>                
+            </ul>
+            <div class="py-4 col-12  px-md-3 px-0" style="overflow: auto; max-height: 300px;">
+                <app-slidenhacungcap></app-slidenhacungcap>
+            </div>
+            <ul class="nav nav-tabs d-flex text-center border-bottom-0 text-white" id='myTab'>
+                <li class="nav-item col d-flex bg-success mx-1 p-0 mat-elevation-z1 border-0 ">
+                    <a class="nav-link w-100 text-white" [ngClass]="{'active': isActive1}" (click)="onClickTab(1)">Sản
+                        phẩm
+                        mới</a>
+                </li>
+                <li class="nav-item col p-0 mat-elevation-z1 border-0 d-flex bg-success mx-1 ">
+                    <a class="nav-link w-100 text-white" [ngClass]="{'active': isActive2}" (click)="onClickTab(2)">Sản
+                        phẩm khuyến
+                        mãi</a>
+                </li>
+                <li class="nav-item col d-flex p-0 mat-elevation-z1 border-0 bg-success mx-1">
+                    <a class="nav-link  w-100 text-white" [ngClass]="{'active': isActive3}" (click)="onClickTab(3)">Sản
+                        phẩm mua
+                        nhiều</a>
+                </li>
+            </ul>
+            <div class="py-4 col-12  px-md-3 px-0" style="max-height: 326px">
+                <app-sanphammoi></app-sanphammoi>
+            </div>
+            
+
+        </div>
+
+    </div>
+</div>
+
+<div class="bg-light pb-5">
+    <div class="container">
+        <!-- <app-block-danhmuc *ngFor="let item of myblocks,let i=index" [idblock]="item" [idbaner]="i"></app-block-danhmuc> -->
+        <!-- <app-block-danh-muc *ngFor="let item of myblocks,let i=index" [idblock]="item" [idbaner]="i">
+        </app-block-danh-muc> -->
+
+    </div>
+</div>
+<app-loading></app-loading>

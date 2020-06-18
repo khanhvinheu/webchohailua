@@ -1,0 +1,55 @@
+<div class="row" >    
+    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7" style="background-image: url({{api_url}}/upload/other/form-img.jpg);background-size: 100%;">   
+        <!-- <img style="width: 150%;" src="{{api_url}}/upload/other/form-img.jpg" alt="">      -->        
+    </div>   
+    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" style="padding: 30px;">
+        <div class="col-lg-12 p-0 mx-0">
+            <span class="title_sp_lq">ĐĂNG KÝ</span>  
+            <button class="position-absolute" style="right: 0" type="button" class="close"
+            (click)="onNoClick()">&times;</button>
+        </div>
+        <hr>
+        <form [formGroup]="frm" (ngSubmit)="onSubmitForm()" class=" d-flex flex-column">
+            <div class="form-group">
+                <div class="d-flex flex-row justify-content-between">
+                    <label for="email">Tên:</label>
+                    <span [ngClass]="onValidatorTextColor('hoTen')" [innerHTML]="onValidator('hoTen')"></span>
+                </div>
+                <input class="form-control " [ngClass]="onValidatorBorderColor('hoTen')" placeholder="Nhập Tên "
+                    formControlName="hoTen" />
+            </div>
+            <div class="form-group">
+                <div class="d-flex flex-row justify-content-between">
+                    <label for="email">Email:</label>
+                    <span [ngClass]="onValidatorTextColor('email')" [innerHTML]="onValidator('email')"></span>
+                </div>
+                <input class="form-control " [ngClass]="onValidatorBorderColor('email')" placeholder="Nhập email "
+                    formControlName="email" type="email"/>
+            </div>           
+            <div class="form-group">
+                <div class="d-flex flex-row justify-content-between">
+                    <label for="pwd">Mật khẩu:</label>
+                    <span [ngClass]="onValidatorTextColor('password')" [innerHTML]="onValidator('password')"></span>
+                </div>
+    
+                <input type="password" formControlName="password" class="form-control" placeholder="Nhập mật khẩu">
+            </div>
+            <div class="form-group">
+                <div class="d-flex flex-row justify-content-between">
+                    <label for="pwd">Nhập lại mật khẩu:</label>
+                    <span [ngClass]="onValidatorTextColor('re_password')" [innerHTML]="onValidator('re_password')"></span>
+                </div>
+    
+                <input type="password" formControlName="re_password" class="form-control" placeholder="Nhập lại mật khẩu">
+            </div>
+            <!-- <div class="pb-3">
+                <re-captcha (resolved)="resolved($event)" siteKey="6LcXJrcUAAAAAOu5JqPaB0-2Gim_ixq6BIpaGxhx">
+                </re-captcha>
+            </div>  -->
+    
+            <button type="submit" class="btn btn-info align-self-center w-100 "
+                [disabled]="frm.invalid || !reCatcha_status" style="background-color: #dc3545; border-color: #dc3545;">Đăng ký</button>
+        </form>
+    </div>
+    
+</div>

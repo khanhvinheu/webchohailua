@@ -64,7 +64,7 @@ export class DanhmuchinhService {
                 }
             },
             () => {},
-            () => this.isLoadingSub.next(false)
+            () => this.isLoadingSub.next(false),
         );
     }
     delete(value) {

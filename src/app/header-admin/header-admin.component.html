@@ -4,9 +4,9 @@
           [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
           <div class="d-flex flex-row bg-info align-items-center" style="height: 64px;">
               <span class="mx-2 rounded-circle overflow-hidden">
-                  <img style="height: 40px;width: 40px" src="" alt="">
+                  <img style="height: 40px;width: 40px" src="{{api_url}}/upload/user/{{currentUser.hinh}}" alt="">
               </span>
-              <span class="text-white" style="line-height: 40px">Hi: KV </span>
+              <span class="text-white" style="line-height: 40px">{{currentUser.hoTen}} </span>
           </div>
           <mat-nav-list>
 
